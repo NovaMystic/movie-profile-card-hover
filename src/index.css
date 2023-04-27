@@ -1,13 +1,148 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(
+      45deg,
+      rgb(12, 175, 204) 1%,
+      rgb(252, 132, 226) 95%
+    ),
+    linear-gradient(-45deg, #ff00ea 0%, rgb(181 255 0 / 50%) 80%);
+  /* background: linear-gradient(#1f242b 30%, #101b24); */
+}
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(./images/Snowflakes-PNG-Transparent-Image.png);
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+}
+.container {
+  position: relative;
+  width: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.container .card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+  border-radius: 20px;
+  z-index: 10000;
+  overflow: hidden;
+}
+.container .card:nth-child(1) {
+  background: linear-gradient(#73caec, #42a3f3 30%, #151a20 30%, #263f53);
+}
+.container .card:nth-child(2) {
+  background: linear-gradient(#cc8cf1, #d264ee 30%, #221c29 30%, #241f30);
+}
+.container .card .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 100000;
+  border-radius: 20px;
+  overflow: hidden;
+  transform-origin: top;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.container .card:hover .imgBx {
+  transform: translateY(30px) scale(0.5);
+}
+.container .card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  transform: translateY(100%);
+  transition: 0.5s;
+}
+.container .card:hover .content {
+  transform: translateY(0);
+}
+.container .card .content .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.container .card .content .details h2 {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.container .card .content .details h2 span {
+  font-size: 20px;
+  font-weight: 400;
+  color: #03a9f4;
+  font-weight: 500;
+}
+.container .card:nth-child(2) .content .details h2 span {
+  color: #db80ff;
+}
+.social_icons {
+  position: relative;
+  display: flex;
+  margin-top: 5px;
+}
+.social_icons li {
+  list-style: none;
+  margin: 4px;
+}
+.social_icons li a {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #294d69;
+  border-radius: 50%;
+  font-size: 1.5em;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.social_icons li a:hover {
+  transform: rotate(360deg);
+  background: #03a9f4;
+}
+.container .card:nth-child(2) .social_icons li a {
+  background: #432f4d;
+}
+.container .card:nth-child(2) .social_icons li a:hover {
+  background: #db80ff;
 }
